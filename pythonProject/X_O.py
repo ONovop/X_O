@@ -182,13 +182,15 @@ def human_turn(mx, turns=9):
         return True
     cor_turn = False
     while not cor_turn:
-        row = int(input('В какую стоку ходим?'))
-        col = int(input('В какой столбик ходим?'))
-        if ((0 < row < 4)
-            and (0 < col < 4)
-            and (mx[row])[col] == ' '):
+        row = input('В какую стоку ходим?')
+        col = input('В какой столбик ходим?')
+        if (row.isdigit()
+            and col.isdigit()
+            and (0 < int(row) < 4)
+            and (0 < int(col) < 4)
+            and (mx[int(row)])[int(col)] == ' '):
                 cor_turn = True
-                (mx[row])[col] = mark_u
+                (mx[int(row)])[int(col)] = mark_u
         else:
             print('В эту ячейку нельзя ходить')
     table(mx)
