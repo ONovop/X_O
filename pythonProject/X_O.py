@@ -168,7 +168,7 @@ def comp_turn(mx, turns=9):
                     turns -=1
                     return human_turn(mx, turns)
         if turns != 1:
-            couple = free[random.randint(0, len(free))]
+            couple = free[random.randint(0, (len(free)-1))]
         else:
             couple = free[0]
         (mx[couple[0]])[couple[1]] = mark_c
